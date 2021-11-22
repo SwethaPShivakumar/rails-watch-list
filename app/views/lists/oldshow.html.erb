@@ -1,0 +1,37 @@
+
+<table>
+
+  <tbody>
+ <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>All movies</h1>
+      <ul class="list-group">
+        <% @movies.each do |movie| %>
+        <div class="card p-3 m-3 shadow br-3">
+          <li class="list-group-item">
+            <%# <%= link_to movie.title, movie_path(movie) %>
+              <strong>Poster:</strong>
+              <img class="image-height-short" src="<%= movie.poster_url %>" alt="">
+
+              <strong>Title:</strong>
+              <%= movie.title %>
+
+              <strong>Overview:</strong>
+              <%= movie.overview %>
+
+              <strong>Rating:</strong>
+              <%= movie.rating %>
+
+          </li>
+          </div>
+        <% end %>
+      </ul>
+      <%= link_to "Add a new movie", new_movie_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+
+  </tbody>
+</table>
